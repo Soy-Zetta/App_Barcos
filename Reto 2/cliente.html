@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adm Juegos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div id="nuevocliente">
+            <h2>Ingreso de Barcos</h2>
+            <div class="form-group">
+                <label for="id">Id del Cliente</label>
+                <input type="number" class="form-control" id="id" aria-describedby="idHelp" placeholder="Id del Cliente">
+            </div>
+            <div class="form-group">
+                <label for="name">Nombre del Cliente</label>
+                <input type="text" class="form-control" id="name" placeholder="Nombre del Cliente">
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electronico</label>
+                <input type="text" class="form-control" id="email" placeholder="Correo Electronico">
+            </div>
+            <div class="form-group">
+                <label for="age">Edad</label>
+                <input type="number" class="form-control" id="age" placeholder="Edad">
+            </div>
+            <br><br>
+            <button class="btn btn-primary" id="nuevoGuardar" onclick="guardarNuevoCliente()">Guardar</button>
+            <button class="btn btn btn-secondary" id="nuevoCancelar" onclick="inicial()">Cancelar</button>
+        </div>
+
+        <div id="datosdelciente">
+            <h1>Listado de Clientes</h1>
+            <button class="btn btn-primary" onclick="agregarcliente()">Agregar Clientes</button>
+            <br>
+            <br>
+            <table border="1" class="table table-striped table-responsive-md" id="tablacliente">
+                <thead>
+                    <tr>
+                        <th>Id del Cliente</th>
+                        <th>Nombre del Cliente</th>
+                        <th>Correo Electronico</th>
+                        <th>Edad</th>
+                    </tr>
+                </thead>
+                <tbody id="registrocliente">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div id="modificarcliente">
+            <h2>Modificar Cliente</h2>
+            <div class="form-group">
+                <label id ="idLabelCliente"> </label>
+                <input type="hidden" class="form-control" id="idModifCliente" placeholder="Id del Cliente">
+            </div>
+            <div class="form-group">
+                <label for="nameModifCliente">Nombre Completo</label>
+                <input type="text" class="form-control" id="nameModifCliente" placeholder="Nombre Completo">
+            </div>
+            <div class="form-group">
+                <label for="emailModifCLiente">Correo Electronico</label>
+                <input type="text" class="form-control" id="emailModifCLiente" placeholder="Coreeo Electronico">
+            </div>
+            <div class="form-group">
+                <label for="ageModifCliente">Edad</label>
+                <input type="number" class="form-control" id="ageModifCliente" placeholder="Edad">
+            </div>
+            <br><br>
+            <button id="guardarCliente" class="btn btn-primary" onclick="guardarEditarCliente()">Guardar</button>
+            <button id="nuevoCliente" class="btn btn-secondary" onclick="inicial()">Cancelar</button>
+        </div>
+
+        <div id="borrarcliente">
+            <h2>Desea borrar la información del Barco: </h2>
+            <input id="idDeleteCliente" type="hidden">
+            <ol class="list-group list-group-numbered">
+                <li id="idClientDelete" class="list-group-item"></li>
+                <li id="nameDelete" class="list-group-item"></li>
+                <li id="emailDelete" class="list-group-item"></li>
+                <li id="ageDelete" class="list-group-item"></li>  
+            </ol>
+            <br><br>
+            <button id="borrarGuardarCliente" class="btn btn-primary" onclick="guardarBorrarCliente()">Eliminar</button>
+            <button id="borrarCancelarCliente" class="btn btn-secondary" onclick="inicial()">Cancelar</button>
+        </div>
+    </div>
+    <script src="/js/cliente.js">
+    </script>
+</body>
+
+</html>
