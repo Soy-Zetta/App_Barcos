@@ -5,7 +5,7 @@ let tabla = document.getElementById("tabla");
 let url="http://144.24.17.60:8084/api/Message/all"
 inicial()
 traerdatos()
-traefincas()
+traebarcos()
 traeclientes()
 
 function inicial() {
@@ -128,21 +128,25 @@ function guardarNuevo() {
 }
 
 function guardarEditar() {
-    url = "http://144.24.17.60:8084/api/Message";
+    
 
     //recupera la informacion de los campos de texto "input"
     let idModif = document.getElementById("idModif").value    
     let messagetextModif = document.getElementById("messagetextModif").value 
     let clientIdModif = document.getElementById("clientIdModif").value 
     let boatIdModif = document.getElementById("boatIdModif").value 
-
+    let url = "http://144.24.17.60:8084/api/Message/update";
     //crear un objeto javascript
     let objeto = {
         idMessage: idModif,
-        messagetext: messagetextModif,
+        messageText: messagetextModif,
+        boat: {id: parseInt(boatIdModif) },
+        client: {idClient: parseInt(clientIdModif) }
+        
+        
         
     };
-
+    
     //Crea un objeto de tipo JSON a partir de un objeto javascript
     let objetoJSON = JSON.stringify(objeto)
     //1 crear un objeto XMLHttpRequest
@@ -169,11 +173,11 @@ function guardarEditar() {
 }
 
 function guardarBorrar() {
-    let url = "http://144.24.17.60:8084/api/Message/delete"
+   
 
     let objetoPeticion = new XMLHttpRequest();
     let idDelete = document.getElementById("idDelete").value
-
+    let url = "http://144.24.17.60:8084/api/Message"
     //objeto javascript
     /*
     let parametro = {
@@ -213,11 +217,11 @@ function traerdatos() {
                 registros += "<tr>\
                         <th scope=\"row\">" + id + "</th>\
                         <td>" + respuesta[i].messageText + "</td>\
-                        <td>" + respuesta[i].boat.name + " - " + respuesta[i].boat.category.name +"</td>\
+                        <td>" + respuesta[i].boat.name + "</td>\
                         <td>" + respuesta[i].client.name + "</td>\
                         <td>\
-                             <button class=\"btn btn-outline-dark\" onclick=\"editar(" + id + ")\" disabled>Modificar</button>\
-                            <button class=\"btn btn-outline-dark\" onclick=\"eliminar(" + id + ")\" disabled>Borrar</button>\
+                             <button class=\"btn btn-outline-dark\" onclick=\"editar(" + id + ")\" >Modificar</button>\
+                            <button class=\"btn btn-outline-dark\" onclick=\"eliminar(" + id + ")\" >Borrar</button>\
                         </td>\
                         </tr>"
 
@@ -236,13 +240,14 @@ function traerdatos() {
     xhttp.send();
 }
 
-function traefincas(){
+function traebarcos(){
     //1 crear un objeto XMLHttpRequest
     let peticion = new XMLHttpRequest();
-    url = "http://144.24.17.60:8084/api/Farm/all";
+   
     let id;
     let nombre;
     let respuesta;
+    url = "http://144.24.17.60:8084/api/Boat/all";
     /*2 propiedad onreadystatechange asigna a una funcion
           que funcion valida si la respuesta fue exitosa
           readyState=4 y status=200, en cuyo caso obtiene la respuesta, 
