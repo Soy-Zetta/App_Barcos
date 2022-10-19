@@ -13,43 +13,52 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class BoatService {
+
     @Autowired
     private BoatRepository boatRepository;
-    
-    public List<Boat> getBoatList(){
+
+    public List<Boat> getBoatList() {
         return boatRepository.findAll();
     }
-    
-    public Boat getBoatById(Long id){
+
+    public Boat getBoatById(Long id) {
         return boatRepository.findById(id).get();
     }
-    
-    public Boat insertBoat(Boat boat){
+
+    public Boat insertBoat(Boat boat) {
         return boatRepository.save(boat);
     }
-    
-    public void deleteBoat(Long id){
-       boatRepository.deleteById(id);               
+
+    public void deleteBoat(Long id) {
+        boatRepository.deleteById(id);
     }
-    
-    public Boat updateBoat(Boat boat){
-        //la boat existe
-        if (boat.getId()!=null){
-            //validamos si la boat existe
-            Optional<Boat> opcional =  boatRepository.findById(boat.getId());
-            
-            //la boat no existe
-            if (opcional.isEmpty()) return boat;
-            //si la boat existe
-            else{
-               Boat boatDB = opcional.get();
-               
-               boatDB.setBrand(boat.getBrand());
-               boatDB.setYear(boat.getYear());
-               boatDB.setCategory(boat.getCategory());
-               boatDB.setName(boat.getName());
-               boatDB.setDescription(boat.getDescription());
-               return boatRepository.save(boatDB);
+
+    public Boat updateBoat(Boat boat) {
+
+        if (boat.getId() != null) {
+            Optional<Boat> opcional = boatRepository.findById(boat.getId());
+
+            if (opcional.isEmpty()) {
+                return boat;
+            } else {
+                Boat boatDB = opcional.get();
+
+                if (boat.getBrand() != null) {
+                    boatDB.setBrand(boat.getBrand());
+                }
+                if (boat.getYear() != null) {
+                    boatDB.setYear(boat.getYear());
+                }
+                if (boat.getCategory() != null) {
+                    boatDB.setCategory(boat.getCategory());
+                }
+                if (boat.getName() != null) {
+                    boatDB.setName(boat.getName());
+                }
+                if (boat.getDescription() != null) {
+                    boatDB.setDescription(boat.getDescription());
+                }
+                return boatRepository.save(boatDB);
             }
         }
         return boat;

@@ -9,5 +9,4 @@ public class G8JpaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(G8JpaApplication.class, args);
 	}
-
 }

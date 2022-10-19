@@ -49,7 +49,7 @@ import org.springframework.web.bind.annotation.RestController;
             return ResponseEntity.status(201).build();
         }
 
-        @DeleteMapping("/delete/{id}")
+        @DeleteMapping("/{id}")
         public ResponseEntity deleteBoat(@PathVariable("id") Long id) {
             boatService.deleteBoat(id);
             return ResponseEntity.status(204).build();

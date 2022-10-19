@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import static org.hibernate.criterion.Projections.id;
 
 /**
  *
@@ -123,6 +124,4 @@ public class Client implements Serializable  {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-    
-    
 }

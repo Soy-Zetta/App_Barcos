@@ -8,5 +8,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author CALM
  */
 public interface CategoryRepository extends JpaRepository<Category, Long>{
-    
 }

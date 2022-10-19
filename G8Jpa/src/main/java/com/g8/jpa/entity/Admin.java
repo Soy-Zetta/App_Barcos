@@ -52,4 +52,3 @@ public class Admin implements Serializable  {
         this.name = name;
     }
 }
-

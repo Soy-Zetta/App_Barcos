@@ -24,8 +24,11 @@ public class AdminService {
         return adminRepository.save(admin);
     }
 
-    //Metodo para consultar una registo x su id (Capa de servicios)
     public Admin getAdminById(Long id) {
         return adminRepository.findById(id).get();
     }
+    
+    /*public void deleteAdmin(Long id){
+        adminRepository.deleteById(id);
+    }*/
 }

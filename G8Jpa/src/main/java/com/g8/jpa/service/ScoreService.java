@@ -30,4 +30,8 @@ public class ScoreService {
     public Score getScoreById(Long id) {
         return scoreRepository.findById(id).get();
     }
+    
+    /*public void deleteScore(Long id){
+        scoreRepository.deleteById(id);
+    }*/
 }
