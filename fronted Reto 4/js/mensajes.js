@@ -35,12 +35,12 @@ function editar(id) {
             let idModif = document.getElementById("idModif")
             let messagetextModif = document.getElementById("messagetextModif")
             let clientIdModif = document.getElementById("clientIdModif")
-            let farmIdModif = document.getElementById("farmIdModif")
+            let boatIdModif = document.getElementById("boatIdModif")
 
             idModif.value = respuesta.idMessage
             messagetextModif.value = respuesta.messageText
             clientIdModif.value = respuesta.client.idClient
-            farmIdModif.value = respuesta.farm.id
+            boatIdModif.value = respuesta.boat.id
             
             document.getElementById("idLabel").innerHTML = "<strong>Id: </strong>" + idModif.value
             //Configura aspecto visual de la interfaz
@@ -75,7 +75,7 @@ function eliminar(id) {
             document.getElementById("idList").innerHTML = "<strong>Id: </strong>" + respuesta.idMessage
             document.getElementById("messagetextList").innerHTML = "<strong>Mensaje: </strong>" + respuesta.messagetext
             document.getElementById("clientList").innerHTML = "<strong>Cliente: </strong>" + respuesta.client.name
-            document.getElementById("farmList").innerHTML = "<strong>Finca: </strong>" + respuesta.farm.id
+            document.getElementById("boatList").innerHTML = "<strong>Finca: </strong>" + respuesta.boat.id
             document.getElementById("idDelete").value = respuesta.idMessage
             nuevo.style.display = "none"
             modificar.style.display = "none"
@@ -89,14 +89,14 @@ function eliminar(id) {
 function guardarNuevo() {
     //recupera información del formulario
     let messagetext = document.getElementById("messagetext").value
-    let farmId = document.getElementById("farmId").value
+    let boatId = document.getElementById("boatId").value
     let clientId = document.getElementById("clientId").value
 
     //creo un objeto javascript
     
     let objeto = {
         messageText: messagetext,
-        farm: {id: parseInt(farmId) },
+        boat: {id: parseInt(boatId) },
         client: {idClient: parseInt(clientId) }
     };
     
@@ -134,7 +134,7 @@ function guardarEditar() {
     let idModif = document.getElementById("idModif").value    
     let messagetextModif = document.getElementById("messagetextModif").value 
     let clientIdModif = document.getElementById("clientIdModif").value 
-    let farmIdModif = document.getElementById("farmIdModif").value 
+    let boatIdModif = document.getElementById("boatIdModif").value 
 
     //crear un objeto javascript
     let objeto = {
@@ -213,7 +213,7 @@ function traerdatos() {
                 registros += "<tr>\
                         <th scope=\"row\">" + id + "</th>\
                         <td>" + respuesta[i].messageText + "</td>\
-                        <td>" + respuesta[i].farm.name + " - " + respuesta[i].farm.category.name +"</td>\
+                        <td>" + respuesta[i].boat.name + " - " + respuesta[i].boat.category.name +"</td>\
                         <td>" + respuesta[i].client.name + "</td>\
                         <td>\
                              <button class=\"btn btn-outline-dark\" onclick=\"editar(" + id + ")\" disabled>Modificar</button>\
@@ -263,8 +263,8 @@ function traefincas(){
           registros += '<option value="' + id + '">' + nombre + "</option>"
         }
   
-        document.getElementById("farmId").innerHTML = registros
-        document.getElementById("farmIdModif").innerHTML = registros
+        document.getElementById("boatId").innerHTML = registros
+        document.getElementById("boatIdModif").innerHTML = registros
       }
     };
   
