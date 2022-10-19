@@ -2,8 +2,8 @@ let nuevo = document.getElementById("nuevo");
 let modificar = document.getElementById("modificar");
 let borrar = document.getElementById("borrar");
 let tabla = document.getElementById("tabla");
-let url="http://localhost:8082/api/Message/all"
-
+let url="http://144.24.17.60:8084/api/Message/all"
+inicial()
 traerdatos()
 traefincas()
 traeclientes()
@@ -26,7 +26,7 @@ function agregar() {
 function editar(id) {
 
     let xhttp = new XMLHttpRequest();
-    url = "http://localhost:8082/api/Message"
+    url = "http://144.24.17.60:8084/api/Message"
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let respuesta = JSON.parse(this.responseText);
@@ -59,8 +59,7 @@ function editar(id) {
 }
 
 function eliminar(id) {
-    let url = "http://localhost:8082/api/Message"
-
+    let url = "http://144.24.17.60:8084/api/Message"
     //Creo un objeto para poder procesar la peticion ajax
     let solicitud = new XMLHttpRequest()
 
@@ -104,7 +103,7 @@ function guardarNuevo() {
     //convierto el objeto de javascript a formato json
     let objetoJson = JSON.stringify(objeto)
 
-    url = "http://localhost:8082/api/Message/save";
+    url = "http://144.24.17.60:8084/api/Message/save";
 
     //1 crear un objeto XMLHttpRequest
     let peticion = new XMLHttpRequest()
@@ -129,7 +128,7 @@ function guardarNuevo() {
 }
 
 function guardarEditar() {
-    url = "http://localhost:8082/api/Message";
+    url = "http://144.24.17.60:8084/api/Message";
 
     //recupera la informacion de los campos de texto "input"
     let idModif = document.getElementById("idModif").value    
@@ -170,7 +169,7 @@ function guardarEditar() {
 }
 
 function guardarBorrar() {
-    let url = "http://localhost:8082/api/Message/delete"
+    let url = "http://144.24.17.60:8084/api/Message/delete"
 
     let objetoPeticion = new XMLHttpRequest();
     let idDelete = document.getElementById("idDelete").value
@@ -200,7 +199,7 @@ function guardarBorrar() {
 function traerdatos() {
     let registros = ""
     let id = ""
-    url="http://localhost:8082/api/Message/all"
+    url="http://144.24.17.60:8084/api/Message/all"
 
     let xhttp = new XMLHttpRequest();
     let salida = "<strong>Texto del mensaje :</strong>";
@@ -240,7 +239,7 @@ function traerdatos() {
 function traefincas(){
     //1 crear un objeto XMLHttpRequest
     let peticion = new XMLHttpRequest();
-    url = "http://localhost:8082/api/Farm/all";
+    url = "http://144.24.17.60:8084/api/Farm/all";
     let id;
     let nombre;
     let respuesta;
@@ -276,7 +275,7 @@ function traefincas(){
 function traeclientes(){
     //1 crear un objeto XMLHttpRequest
     let peticion = new XMLHttpRequest();
-    url = "http://localhost:8082/api/Client/all";
+    url = "http://144.24.17.60:8084/api/Client/all"
     let id;
     let nombre;
     let respuesta;
