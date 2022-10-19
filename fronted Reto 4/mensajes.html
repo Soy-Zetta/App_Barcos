@@ -20,13 +20,13 @@
                 <input type="text" class="form-control" id="messagetext" placeholder="Mensaje">
             </div>
             <div class="form-group">
-                <label for="farmId">Cliente</label>
+                <label for="boatId">Cliente</label>
                 <select class="form-select" id="clientId" placeholder="Cliente">
                 </select>
             </div>
             <div class="form-group">
-                <label for="farmId">Finca</label>
-                <select class="form-select" id="farmId" placeholder="Finca">
+                <label for="boatId">Barco</label>
+                <select class="form-select" id="boatId" placeholder="Barco">
                 </select>
             </div>
             <br><br>
@@ -50,12 +50,12 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="farmIdModif">Finca</label>
-                <select class="form-select" id="farmIdModif" placeholder="Finca">
+                <label for="boatIdModif">Barco</label>
+                <select class="form-select" id="boatIdModif" placeholder="Barco">
                 </select>
             </div>
             <br><br>
-            <button id="nuevoGuardar" class="btn btn-primary" onclick="guardarEditar()" disabled>Guardar</button>
+            <button id="nuevoGuardar" class="btn btn-primary" onclick="guardarEditar()">Guardar</button>
             <button id="nuevoCancelar" class="btn btn-secondary" onclick="inicial()">Cancelar</button>
         </div>
 
@@ -66,10 +66,10 @@
                 <li id="idList" class="list-group-item"></li>
                 <li id="messagetextList" class="list-group-item"></li>
                 <li id="clientList" class="list-group-item"></li>
-                <li id="farmList" class="list-group-item"></li>
+                <li id="boatList" class="list-group-item"></li>
             </ol>
             <br><br>
-            <button id="borrarGuardar" class="btn btn-primary" onclick="guardarBorrar()" disabled>Eliminar</button>
+            <button id="borrarGuardar" class="btn btn-primary" onclick="guardarBorrar()">Eliminar</button>
             <button id="borrarCancelar" class="btn btn-secondary" onclick="inicial()">Cancelar</button>
         </div>
 
@@ -88,7 +88,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Messagetext</th>
-                        <th>Finca</th>
+                        <th>Barco</th>
                         <th>Cliente</th>
                         <th>Action</th>
                     </tr>
