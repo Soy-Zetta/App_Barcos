@@ -33,8 +33,7 @@ function agregar() {
 function editar(id) {
   //1 crear un objeto XMLHttpRequest
   let peticion = new XMLHttpRequest();
-  let url =
-    "https://g204ecfa60e021a-g3qlhq6a8n5r6dq0.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/farm/farm";
+  let url = "http://144.24.17.60:8084/api/Reservation";
 
   /*
   2 propiedad onreadystatechange asigna a una funcion
@@ -76,8 +75,7 @@ function editar(id) {
 function eliminar(id) {
   //1 crear un objeto XMLHttpRequest
   let peticion = new XMLHttpRequest();
-  let url =
-    "https://g204ecfa60e021a-g3qlhq6a8n5r6dq0.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/farm/farm";
+  let url = "http://144.24.17.60:8084/api/Boat/all";
 
   /*
   2 propiedad onreadystatechange asigna a una funcion
@@ -178,8 +176,7 @@ function guardarEditar() {
   //convierto el objeto de javascript a formato json
   let objetoJson = JSON.stringify(objeto)
 
-  let url =
-    "https://g204ecfa60e021a-g3qlhq6a8n5r6dq0.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/farm/farm";
+  let url = "http://144.24.17.60:8084/api/Reservation/update";
 
   //1 crear un objeto XMLHttpRequest
   let peticion = new XMLHttpRequest()
@@ -215,8 +212,7 @@ function guardarBorrar() {
   //convierto el objeto de javascript a formato json
   let objetoJson = JSON.stringify(objeto)
 
-  let url =
-    "https://g204ecfa60e021a-g3qlhq6a8n5r6dq0.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/farm/farm";
+  let url = "http://144.24.17.60:8084/api/Reservation";
 
   //1 crear un objeto XMLHttpRequest
   let peticion = new XMLHttpRequest()
@@ -285,10 +281,10 @@ function traerdatos() {
                         <td>\
                              <button class="btn btn-outline-dark" onclick="editar(' +
           id +
-          ')" disabled>Modificar</button>\
+          ')" >Modificar</button>\
                             <button class="btn btn-outline-dark" onclick="eliminar(' +
           id +
-          ')" disabled>Borrar</button>\
+          ')" >Borrar</button>\
                         </td>\
                         </tr>';
       }
