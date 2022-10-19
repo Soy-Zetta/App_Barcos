@@ -144,13 +144,13 @@ function guardarNuevo() {
 function guardarEditar() {
 
   //recuperar la informacion ingresada en el formulario
-  let idFarm = document.getElementById("idModif").value
+  let idBoat = document.getElementById("idModif").value
   let nameModif = document.getElementById("nameModif").value
   let descriptionModif = document.getElementById("descriptionModif").value
 
   //creo un objeto javascript
   let objeto = {
-    id: idFarm,
+    id: idBoat,
     name: nameModif,
     description: descriptionModif
   }
@@ -215,7 +215,7 @@ function guardarBorrar() {
 function traerdatos() {
   //1 crear un objeto XMLHttpRequest
   let peticion = new XMLHttpRequest();
-  //url ="http://localhost:8082/api/Category/all";
+  
   url="http://144.24.17.60:8084/api/Category/all"
   /*2 propiedad onreadystatechange asigna a una funcion
         que funcion valida si la respuesta fue exitosa
